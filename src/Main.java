@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Задача 1");
         int saveMoney = 15000;
         int total = 0;
-        int month = 1;
+        int month = 0;
         while (total < 2_459_000) {
             total = total + saveMoney;
             month = month + 1;
@@ -38,10 +38,9 @@ public class Main {
         int birthRate = 17;
         int mortality = 8;
         int population = 12_000_000;
-        birthRate = (population / 1000) * 17;
-        mortality = (population / 1000) * 8;
+        int populationGrowth = birthRate - mortality;
         for (int year = 0; year <= 10; year++) {
-            population = population + birthRate - mortality;
+            population = population + population / 1000 * populationGrowth;
             System.out.println("Год " + year + " Численность населения составляет " + population);
         }
     }
@@ -51,7 +50,7 @@ public class Main {
         int investment = 15000;
         int percent = investment * 7 / 100;
         int month = 1;
-        for (; investment < 12_000_000; ) {
+        for (; investment < 12_000_000;) {
             investment = investment + percent;
             month = month + 1;
             System.out.println("месяц " + month + " накоплений " + investment);
